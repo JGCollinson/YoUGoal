@@ -38,14 +38,14 @@ export default withAuth(class NavLinks extends Component {
         <li className="nav-item">
           <Link className="nav-link" to="/" onClick={this.logout}>
             <span className="glyphicon glyphicon-log-out"></span>
-              Logout
+            &nbsp;&nbsp;Logout
           </Link>
         </li>
       ) : (
         <li className="nav-item">
           <Link className="nav-link" to="/">
             <span className="glyphicon glyphicon-log-in"></span>
-              Login
+            &nbsp;&nbsp;Login
           </Link>
         </li>
       )

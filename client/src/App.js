@@ -29,7 +29,6 @@ const App = () => (
       <div>
         <Carousel />
       </div>
-      <div className="row">
           <Switch>
             <Route exact path="/getsupport" component={GetSupport} />
             <Route exact path="/about" component={About} />
@@ -38,7 +37,6 @@ const App = () => (
             <Route exact path="/player/:_id" component={Player} />
             <Route component={NoMatch} />
           </Switch>
-      </div>
       <div className="row">
        <StickyFooter />
       </div>

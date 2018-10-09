@@ -58,7 +58,7 @@ export default class Teams extends Component {
   render() {
     return (
       <div>
-        <PageHeader>
+        <PageHeader style={{margin: 0}}>
           FIFA World Cup Teams <small>2018</small>
         </PageHeader>
         <Breadcrumb>
@@ -111,7 +111,7 @@ export default class Teams extends Component {
             </Grid>
           )}
           <Panel.Footer>
-            <Breadcrumb>
+            <Breadcrumb style={{margin: 0}}>
               <Breadcrumb.Item href="/">
                 Home
               </Breadcrumb.Item>

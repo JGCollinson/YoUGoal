@@ -39,7 +39,7 @@ export default class Players extends Component {
   render() {
     return (
       <div>
-        <PageHeader>
+        <PageHeader style={{margin: 0}}>
 					FIFA Players <small>2018</small>
 				</PageHeader>
         <Breadcrumb>
@@ -76,7 +76,7 @@ export default class Players extends Component {
                             <CardBody>
                               <CardTitle>{man.name}</CardTitle>
                             </CardBody>
-                            <Thumbnail alt={man.name} src={man.plyrImg} />
+                            <Thumbnail style={{margin: 0}} alt={man.name} src={man.plyrImg} />
                             <CardBody>
                               <h6 className="card-title">Kit #: {man.jerseyNumber}</h6>
                               <h6 className="card-title">Position: {man.postion}</h6>
@@ -98,7 +98,7 @@ export default class Players extends Component {
 						  </Grid>
             )}
           <Panel.Footer>
-            <Breadcrumb>
+            <Breadcrumb style={{margin: 0}}>
               <Breadcrumb.Item href="/">
                 Home
               </Breadcrumb.Item>
