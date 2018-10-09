@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Teams from "./pages/Teams";
@@ -31,24 +30,14 @@ const App = () => (
         <Carousel />
       </div>
       <div className="row">
-        <Security issuer="https://dev-590113.oktapreview.com/oauth2/default"
-                  client_id="0oafq5xga3MOGlArd0h7"
-                  redirect_uri={window.location.origin + "/implicit/callback"}
-                  onAuthRequired={onAuthRequired}>
           <Switch>
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/login"
-              render={() => <Signin baseUrl="https://dev-590113.oktapreview.com" />}
-            />
             <Route exact path="/getsupport" component={GetSupport} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/implicit/callback" component={ImplicitCallback} />
-            <SecureRoute exact path="/" component={Teams} />
-            <SecureRoute exact path="/teamsGet/:teamID" component={Players} />
-            <SecureRoute exact path="/player/:_id" component={Player} />
+            <Route exact path="/" component={Teams} />
+            <Route exact path="/teamsGet/:teamID" component={Players} />
+            <Route exact path="/player/:_id" component={Player} />
             <Route component={NoMatch} />
           </Switch>
-        </Security>
       </div>
       <div className="row">
        <StickyFooter />

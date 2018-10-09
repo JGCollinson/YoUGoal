@@ -36,12 +36,6 @@ export default withAuth(
     };
 
     componentDidMount() {
-      const client = JSON.parse(localStorage.getItem("okta-token-storage"));
-      this.setState({
-        currentUserEmail: client.idToken.claims.email,
-        currentUserName: client.idToken.claims.name,
-        clientId: client.idToken.clientId
-      });
       this.loadPlayer(this.props.match.params._id);
       this.LoadRatingByPlayerID(this.props.match.params._id);
     }
