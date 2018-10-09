@@ -1,51 +1,54 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+// import NavLinks from "./NavLinks";
+import "./NavigationBar.css";
+import NavLinks from "./NavLinks";
 
-const NavigationBar = () => {
-	return (
-		<div className="pos-f-t">
-			<div className="collapse" id="navbarToggleExternalContent">
-		    <div className="bg-dark p-4">
-		      <h4 className="text-white">Collapsed content</h4>
-		      <span className="text-muted">Most Popular Players</span>
-		      <span className="text-muted">Most Popular Teams</span>
-		      <span className="text-muted"></span>
-		    </div>
-		  </div>
-			<nav className="navbar navbar-default">
-				<div className="container-fluid">
-				  <div className="navbar-header">
-				    <a className="navbar-brand" href="#">YoUGoal Sport Try</a>
-				  </div>
-				  <div className="navbar-brand">
+export default class NavigationBar extends Component {
 
-				    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-				      <span className="navbar-toggler-icon"></span>
-				    </button>
-				    <ul className="nav navbar-nav">
-				      <li className="active"><a href="#">Home</a></li>
-				    </ul>
-				    <form className="navbar-form navbar-left" href="/login">
-				      <div className="form-group">
-				        <input type="text" className="form-control" placeholder="Search" />
-				      </div>
-				      <button type="submit" className="btn btn-default">Submit</button>
-				    </form>
-				  </div>
-				  <div className="collapse navbar-collapse">
-				    <ul className="nav navbar-nav navbar-right">
-				      <li>
-				      	<a href="#">
-				      		<span className="glyphicon glyphicon-user"></span> Sign Up
-		      			</a>
-		      		  </li>
-				      <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
-				    </ul>
-				  </div>
-				</div>
-			</nav>
-		</div>
-	);
+  render(){
+
+    return (
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <Link className="navbar-brand" to="/">You Goal : Rotten Tomatoes for FIFA</Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarColor01">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <Link className="nav-link" to="/">
+                <span className="glyphicon glyphicon-hand-left sr-only"></span>
+                  Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/signup">
+                <span className="glyphicon glyphicon-user"></span>
+                  Sign Up
+              </Link>
+            </li>
+            <NavLinks />
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                <span className="glyphicon glyphicon-sunglasses"></span>
+                  About
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/getsupport">
+                <span className="glyphicon glyphicon-phone-alt"></span>
+                  Get Support
+              </Link>
+            </li>
+          </ul>
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+            <button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    );
+  }
 }
-
-export default NavigationBar;

@@ -1,31 +1,24 @@
-import React from "react";
+import React, { Component } from 'react'
+import { Carousel } from "react-responsive-carousel";
 
-const Carousel = () => {
-  return (
-    <Carousel>
-      <Carousel.Item>
-        <img width={900} height={500} alt="900x500" src="/carousel.png" />
-        <Carousel.Caption>
-          <h3>FIFA World Cup 2018</h3>
-          <p>Final Games</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width={900} height={500} alt="900x500" src="/carousel.png" />
-        <Carousel.Caption>
-          <h3>Spanish Leagueships</h3>
-          <p>Winner</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width={900} height={500} alt="900x500" src="/carousel.png" />
-        <Carousel.Caption>
-          <h3>British Leagueships</h3>
-          <p>Club and Games</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-  );
+
+export default class ParentCarousel extends Component {
+  render() {
+    return (
+      <Carousel>
+        <div>
+          <img src="http://www.gameoftrendz.com/wp-content/uploads/2018/06/irish-times-world-cup-bkg.jpg" alt="carousel" />
+          <p className="legend">YouGoal FIFA World Cup 2018</p>
+        </div>
+        <div>
+          <img src="http://www.gameoftrendz.com/wp-content/uploads/2018/06/irish-times-world-cup-bkg.jpg" alt="carousel" />
+          <p className="legend">Player and Team Performance Rating Aggregator</p>
+        </div>
+        <div>
+          <img src="http://www.gameoftrendz.com/wp-content/uploads/2018/06/irish-times-world-cup-bkg.jpg" alt="carousel" />
+          <p className="legend">Georgia Tech Bootcamp</p>
+        </div>
+      </Carousel>
+    );
+  }
 }
-
-export default Carousel;

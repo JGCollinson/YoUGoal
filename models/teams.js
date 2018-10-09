@@ -1,22 +1,22 @@
-import { Schema } from "mongoose";
-
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const teamSchema = new Schema({
-  name: { type: String, required: true },
-  players: [{ 
-    type: Schema.ObjectId,
-    ref: "Player" }],
-  tla: { type: String },
-  venue: { type: String },
-  address: { type: String },
-  website: { type: String },
-  founded: { type: String, required: true },
-  clubColors: { type: String },
-  imgTeam: { type: String },
-  date: { type: Date, default: Date.now }
+  tla:String,
+  _id:String,
+  shortName:String,
+  address:String,
+  phone:String,
+  website:String,
+  email:String,
+  founded:String,
+  clubColors:String,
+  venue:String,
+  lastUpdated:String,
+  Flags:String,
+  teamImg:String
 });
 
-const Team = mongoose.model("Team", teamSchema);
+const teams = mongoose.model("teams", teamSchema);
 
-module.exports = Team;
+module.exports = teams;
